@@ -47,7 +47,8 @@ const server = new ApolloServer({
     engine: {
         apiKey: process.env.APOLLO_KEY,
         reportSchema: true
-    } 
+    },
+    cors: true,
 });
 
 // The `listen` method launches a web server.
