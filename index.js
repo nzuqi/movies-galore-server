@@ -39,7 +39,13 @@ const resolvers = {
 
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+    typeDefs, 
+    resolvers, 
+    engine: {    
+        reportSchema: true
+    } 
+});
 
 // The `listen` method launches a web server.
 server.listen().then(({ url }) => {
