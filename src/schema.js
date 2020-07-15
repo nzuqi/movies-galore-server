@@ -19,7 +19,8 @@ const typeDefs = gql`
     }
 
     type Query {
-        shows: [Show]
+        shows:  [Show]
+        show:   Show
     }
 `;
 
