@@ -41,7 +41,7 @@ class ShowsAPI extends RESTDataSource {
     async searchShows({ searchQuery }) {
         const response = await this.get('search/shows?q=' + searchQuery);
         return Array.isArray(response)
-            ? response.map(shows => this.showsReducer(shows))
+            ? response.map(shows => this.showsReducer(shows.show))
             : [];
     }
 
