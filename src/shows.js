@@ -84,8 +84,8 @@ class ShowsAPI extends RESTDataSource {
         };
     }
 
-    async getAllShows() {
-        const response = await this.get('shows');
+    async getAllShows({ pageId = 0 }) {
+        const response = await this.get('shows?page=' + pageId);
         return Array.isArray(response)
             ? response.map(shows => this.showsReducer(shows))
             : [];

@@ -61,8 +61,8 @@ const typeDefs = gql`
     }
 
     type Query {
-        shows(searchQuery: String):                                 [Show]
-        show(showId: Int):                                              Show
+        shows(pageId: Int, searchQuery: String):                                    [Show]
+        show(showId: Int):                                                          Show
     }
 `;
 
