@@ -24,8 +24,8 @@ class ShowsAPI extends RESTDataSource {
                         airtime: episode.airtime,
                         airstamp: episode.airstamp,
                         runtime: episode.runtime,
-                        image_medium: episode.image_medium,
-                        image_original: episode.image_original,
+                        image_medium: (episode.image) ? episode.image.medium : 'assets/no-image.png',
+                        image_original: (episode.image) ? episodeimage.original : 'assets/no-image.png',
                         summary: episode.summary
                     });
                 });
@@ -35,13 +35,13 @@ class ShowsAPI extends RESTDataSource {
                     _cast.push({
                         id: cast.person.id,
                         name: cast.person.name,
-                        country_name: cast.person.country.name,
-                        country_code: cast.person.country.code,
+                        country_name: (cast.person.country) ? cast.person.country.name : '',
+                        country_code: (cast.person.country) ? cast.person.country.code : '',
                         birthday: cast.person.birthday,
                         deathday: cast.person.deathday,
                         gender: cast.person.gender,
-                        image_medium: cast.person.image.medium,
-                        image_original: cast.person.image.original
+                        image_medium: (cast.person.image) ? cast.person.image.medium : 'assets/no-image.png',
+                        image_original: (cast.person.image) ? cast.person.image.original : 'assets/no-image.png'
                     });
                 });
             }
