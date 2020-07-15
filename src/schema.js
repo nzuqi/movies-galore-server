@@ -15,7 +15,49 @@ const typeDefs = gql`
         image_medium: String,
         image_original: String,
         summary: String,
-        updated: Int
+        updated: Int,
+        episodes: [Episodes],
+        cast: [Cast],
+        crew: [Crew]
+    }
+
+    type Episodes {
+        id: ID!,
+        name: String!,
+        season: Int,
+        number: Int,
+        airdate: String,
+        airtime: String,
+        airstamp: String,
+        runtime: Float,
+        image_medium: String,
+        image_original: String,
+        summary: String
+    }
+
+    type Cast {
+        id: ID!,
+        name: String!,
+        country_name: String,
+        country_code: String,
+        birthday: String,
+        deathday: String,
+        gender: String,
+        image_medium: String,
+        image_original: String
+    }
+
+    type Crew {
+        id: ID!,
+        name: String!,
+        type: String,
+        country_name: String,
+        country_code: String,
+        birthday: String,
+        deathday: String,
+        gender: String,
+        image_medium: String,
+        image_original: String
     }
 
     type Query {
