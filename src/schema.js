@@ -20,7 +20,7 @@ const typeDefs = gql`
 
     type Query {
         shows(searchQuery: String):                                 [Show]
-        show(id: Int):                                              Show
+        show(showId: Int):                                              Show
     }
 `;
 
