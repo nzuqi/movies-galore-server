@@ -25,7 +25,7 @@ class ShowsAPI extends RESTDataSource {
                         airstamp: episode.airstamp,
                         runtime: episode.runtime,
                         image_medium: (episode.image) ? episode.image.medium : 'assets/no-image.png',
-                        image_original: (episode.image) ? episodeimage.original : 'assets/no-image.png',
+                        image_original: (episode.image) ? episode.image.original : 'assets/no-image.png',
                         summary: episode.summary
                     });
                 });
