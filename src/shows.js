@@ -12,7 +12,7 @@ class ShowsAPI extends RESTDataSource {
         let _cast = [];
         let _crew = [];
 
-        if(metadata && show._embedded) {
+        if(metadata) {
             if(show._embedded.episodes) {
                 show._embedded.episodes.forEach(episode => {
                     _episodes.push({
@@ -51,13 +51,13 @@ class ShowsAPI extends RESTDataSource {
                         id: crew.person.id,
                         name: crew.person.name,
                         type: crew.type,
-                        country_name: crew.person.country.name,
-                        country_code: crew.person.country.code,
+                        country_name: (crew.person.country) ? crew.person.country.name : '',
+                        country_code: (crew.person.country) ? crew.person.country.code : '',
                         birthday: crew.person.birthday,
                         deathday: crew.person.deathday,
                         gender: crew.person.gender,
-                        image_medium: crew.person.image.medium,
-                        image_original: crew.person.image.original
+                        image_medium: (crew.person.image) ? crew.person.image.medium : 'assets/no-image.png',
+                        image_original: (crew.person.image) ? crew.person.image.original : 'assets/no-image.png'
                     });
                 });
             }
