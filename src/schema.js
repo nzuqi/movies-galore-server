@@ -19,9 +19,8 @@ const typeDefs = gql`
     }
 
     type Query {
-        shows:                                                      [Show]
+        shows(searchQuery: String):                                 [Show]
         show(id: Int):                                              Show
-        searchShows(searchQuery: String):                           [Show]
     }
 `;
 
