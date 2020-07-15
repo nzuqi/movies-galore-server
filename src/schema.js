@@ -21,7 +21,7 @@ const typeDefs = gql`
     type Query {
         shows:                                                      [Show]
         show(id: Int):                                              Show
-        searchShows(searchQuery: String):                                       Show
+        searchShows(searchQuery: String):                           [Show]
     }
 `;
 
