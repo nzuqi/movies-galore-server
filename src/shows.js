@@ -19,8 +19,8 @@ class ShowsAPI extends RESTDataSource {
             premiered: show.premiered,
             officialSite: show.officialSite,
             rating: (show.rating) ? show.rating.average : null,
-            image_medium: show.image.medium,
-            image_original: show.image.original,
+            image_medium: (show.image) ? show.image.medium : '',
+            image_original: (show.image) ? show.image.original: '',
             summary: show.summary,
             updated: show.updated
         };
