@@ -5,10 +5,12 @@ const typeDefs = require('./src/schema');
 const resolvers = require('./src/resolvers');
 
 const ShowsAPI = require('./src/shows');
+const UsersAPI = require('./src/users');
 
 // set up any dataSources our resolvers need
 const dataSources = () => ({
     showsAPI: new ShowsAPI(),
+    usersAPI: new UsersAPI(),
 });
 
 const context = async ({ req }) => {

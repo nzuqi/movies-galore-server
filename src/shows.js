@@ -103,6 +103,14 @@ class ShowsAPI extends RESTDataSource {
             : [];
     }
 
+    getAllFavorites({ showIds }) {
+        return Promise.all(showIds.map(showId => this.getShowById({ showId: showId.show_id })));
+    }
+
+    getAllToWatch({ showIds }) {
+        return Promise.all(showIds.map(showId => this.getShowById({ showId: showId.show_id })));
+    }
+
 }
 
 module.exports = ShowsAPI;

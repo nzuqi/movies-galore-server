@@ -63,6 +63,19 @@ const typeDefs = gql`
     type Query {
         shows(pageId: Int, searchQuery: String):                                    [Show]
         show(showId: Int):                                                          Show
+        favorites(userId: Int, showId: Int):                                        [Show]
+        towatch(userId: Int, showId: Int):                                          [Show]
+    }
+
+    type Mutation {
+        addFavorite(userId: Int, showId: Int):                                    ActionResponse!
+        addToWatch(userId: Int, showId: Int):                                     ActionResponse!
+        addComment(userId: Int, showId: Int, comment: String!):                   ActionResponse!
+    }
+
+    type ActionResponse{
+        response_code: String!
+        description: String
     }
 `;
 
